@@ -1,7 +1,9 @@
-import os, httpx
+import os
+import httpx
 from typing import Any, Dict
 
 API_BASE = "https://api.regulations.gov/v4"
+
 
 def fetch_documents(params: Dict[str, Any], page: int = 1) -> Dict:
     local_params = dict(params)

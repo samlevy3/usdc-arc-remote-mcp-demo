@@ -18,6 +18,11 @@ Demo MCP Server for AI Community Of Practice
    ```sh
    hatch run ai-cop-mcp-demo
    ```
+    Or can also do:
+    ```sh
+    hatch shell 
+    ai-cop-mcp-demo
+    ```
 
 ### Using uv
 
@@ -49,3 +54,17 @@ REGSGOV_API_KEY=your_api_key_here
 
 - `src/ai_cop_mcp_demo/` – Main package code
 - `test/` – Tests
+
+## Linting
+
+This project uses [ruff](https://docs.astral.sh/ruff/) for linting and code style checks.
+
+To lint your code, run:
+```sh
+hatch run ruff check src/
+```
+Or can also do:
+```sh
+hatch shell 
+ruff check src/
+```
