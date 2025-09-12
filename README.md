@@ -102,7 +102,7 @@ DAP_API_KEY=your_api_key_here
 
 ## Project Structure
 
-- `src/usdc-arc-mcp-demo/` – Main package code
+- `src/usdc_arc_mcp_demo/` – Main package code
 - `test/` – Tests
 
 ## Linting
