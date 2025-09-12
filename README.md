@@ -4,9 +4,55 @@
 
 Demo MCP Server for AI Community Of Practice
 
-## Setup
+## Overview
 
-### Using Hatch
+This project is a demonstration Model Context Protocol (MCP) server for analytics.usa.gov data, designed to showcase how LLMs can interact with government analytics APIs using the MCP standard. The codebase is structured to start simple and build up in capability:
+
+- **single_report_tool**: Provides basic access to a single analytics report at a time, ideal for simple queries and initial integration.
+- **multiple_reports_tools**: Adds support for fetching and handling multiple reports, allowing more complex queries and comparisons.
+- **aggregation_tools**: Enables aggregation of analytics data over time periods (week, month, year) and by various dimensions (such as source or agency), supporting more advanced analytics and summarization.
+
+Each tool is registered with the MCP server and can be called by an LLM or other MCP-compatible client. The project is intended as a learning and experimentation platform for building and extending MCP-based analytics APIs.
+
+## Quick Start (Recommended)
+
+### Option 1: Install via uv
+
+```sh
+uv tool install git+https://github.com/GSA-TTS/ai-cop-mcp-demo/
+```
+
+This will install the MCP server as a CLI tool. You can then run:
+
+```sh
+ai-cop-mcp-demo
+```
+
+#### Simple way to connect to Claude 
+
+1. Get the installed tool path:
+   ```sh
+   which ai-cop-mcp-demo
+   ```
+
+2. Copy the path into Claude MCP config:
+   ```json
+   {
+     "mcpServers": {
+       "usa-spending": {
+         "command": "/path/to/ai-cop-mcp-demo",
+         "args": [],
+         "env": {}
+       }
+     }
+   }
+   ```
+
+## Development Setup
+
+### Option 2: Using Hatch or uv
+
+#### Using Hatch
 
 1. Install [Hatch](https://hatch.pypa.io/latest/):
    ```sh
@@ -20,13 +66,13 @@ Demo MCP Server for AI Community Of Practice
    ```sh
    hatch run ai-cop-mcp-demo
    ```
-    Or can also do:
-    ```sh
-    hatch shell 
-    ai-cop-mcp-demo
-    ```
+   Or:
+   ```sh
+   hatch shell
+   ai-cop-mcp-demo
+   ```
 
-### Using uv
+#### Using uv
 
 1. Install [uv](https://github.com/astral-sh/uv):
    ```sh
@@ -65,9 +111,9 @@ To lint your code, run:
 ```sh
 hatch run ruff check src/
 ```
-Or can also do:
+Or:
 ```sh
-hatch shell 
+hatch shell
 ruff check src/
 ```
 
