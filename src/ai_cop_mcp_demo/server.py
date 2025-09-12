@@ -12,10 +12,12 @@ load_dotenv()
 
 mcp = fastmcp.FastMCP("ai-cop-mcp-demo-server")
 
-# Example tool 
+
+# Example tool
 @mcp.tool("add", description="Add two numbers")
 def add(a: int, b: int) -> int:
     return a + b
+
 
 single_report_tool.register_tools(mcp)
 agency_tools.register_tools(mcp)
