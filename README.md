@@ -39,7 +39,7 @@ ai-cop-mcp-demo
    ```json
    {
      "mcpServers": {
-       "usa-spending": {
+       "ai-cop-mcp-demo": {
          "command": "/path/to/ai-cop-mcp-demo",
          "args": [],
          "env": {}
