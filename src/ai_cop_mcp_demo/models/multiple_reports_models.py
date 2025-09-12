@@ -38,7 +38,7 @@ class DomainReportParams(BaseReportParams):
     @field_validator("report_name")
     @classmethod
     def validate_report_name(cls, v):
-        allowed = ["traffic", "referrers", "pages", "downloads"]
+        allowed = ["site", "domain", "download", "second-level"]
         if v not in allowed:
             raise ValueError(f"report_name must be one of: {allowed}")
         return v

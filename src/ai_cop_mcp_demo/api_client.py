@@ -5,7 +5,7 @@ from typing import Any, Dict, Optional
 API_BASE = "https://api.gsa.gov/analytics/dap/v2"
 
 
-async def get(endpoint: str, params: Optional[Dict[str, Any]] = None) -> httpx.Response:
+async def get(endpoint: str, params: Optional[Dict[str, Any]] = None) -> Any:
     headers = {"x-api-key": os.getenv("DAP_API_KEY", "DEMO_KEY")}
 
     url = f"{API_BASE}{endpoint}"
