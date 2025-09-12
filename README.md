@@ -19,28 +19,28 @@ Each tool is registered with the MCP server and can be called by an LLM or other
 ### Option 1: Install via uv
 
 ```sh
-uv tool install git+https://github.com/GSA-TTS/ai-cop-mcp-demo/
+uv tool install git+https://github.com/GSA-TTS/usdc-arc-mcp-demo/
 ```
 
 This will install the MCP server as a CLI tool. You can then run:
 
 ```sh
-ai-cop-mcp-demo
+usdc-arc-mcp-demo
 ```
 
 #### Simple way to connect to Claude 
 
 1. Get the installed tool path:
    ```sh
-   which ai-cop-mcp-demo
+   which usdc-arc-mcp-demo
    ```
 
 2. Copy the path into Claude MCP config:
    ```json
    {
      "mcpServers": {
-       "ai-cop-mcp-demo": {
-         "command": "/path/to/ai-cop-mcp-demo",
+       "usdc-arc-mcp-demo": {
+         "command": "/path/to/usdc-arc-mcp-demo",
          "args": [],
          "env": {
             "DAP_API_KEY": "your-api-key"
@@ -66,12 +66,12 @@ ai-cop-mcp-demo
    ```
 3. Run the server:
    ```sh
-   hatch run ai-cop-mcp-demo
+   hatch run usdc-arc-mcp-demo
    ```
    Or:
    ```sh
    hatch shell
-   ai-cop-mcp-demo
+  usdc-arc-mcp-demo
    ```
 
 #### Using uv
@@ -90,7 +90,7 @@ ai-cop-mcp-demo
    ```
 3. Run the server:
    ```sh
-   ai-cop-mcp-demo
+   usdc-arc-mcp-demo
    ```
 
 ## Configuration
@@ -102,7 +102,7 @@ DAP_API_KEY=your_api_key_here
 
 ## Project Structure
 
-- `src/ai_cop_mcp_demo/` – Main package code
+- `src/usdc-arc-mcp-demo/` – Main package code
 - `test/` – Tests
 
 ## Linting

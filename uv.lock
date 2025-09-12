@@ -3,7 +3,7 @@ revision = 3
 requires-python = ">=3.10"
 
 [[package]]
-name = "ai-cop-mcp-demo"
+name = "usdc-arc-mcp-demo"
 source = { editable = "." }
 dependencies = [
     { name = "fastmcp" },

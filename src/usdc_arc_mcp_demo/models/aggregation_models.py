@@ -1,11 +1,12 @@
 from typing import Optional
 from pydantic import BaseModel, Field, field_validator
 
+from ..constants import AggregationLevel
+
 
 class QueryParams(BaseModel):
     after: Optional[str] = Field(None, description="Start date (YYYY-MM-DD)")
     before: Optional[str] = Field(None, description="End date (YYYY-MM-DD)")
-    limit: Optional[int] = Field(None, description="Number of results per page")
     page: Optional[int] = Field(None, description="Page number for pagination")
 
 
@@ -15,6 +16,11 @@ class BaseReportParams(BaseModel):
     )
     query_params: Optional[QueryParams] = Field(
         ..., description="Additional query parameters"
+    )
+    aggregation_level: Optional[AggregationLevel] = Field(
+        ...,
+        description="Aggregation level. If not specified, will be daily"
+        " (e.g, weekly, monthly, yearly)",
     )
 
 
@@ -32,7 +38,7 @@ class DomainReportParams(BaseReportParams):
     domain: str = Field(..., description="Domain name (e.g., gsa.gov, nasa.gov)")
     report_name: str = Field(
         ...,
-        description="Report type (can only be site, download, os, or traffic-source)",
+        description="Report type (can only be site, domain, download, second-level)",
     )
 
     @field_validator("report_name")

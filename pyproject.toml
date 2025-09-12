@@ -3,7 +3,7 @@ requires = ["hatchling"]
 build-backend = "hatchling.build"
 
 [project]
-name = "ai-cop-mcp-demo"
+name = "usdc-arc-mcp-demo"
 dynamic = ["version"]
 description = 'MCP Server for Regulations.gov API '
 readme = "README.md"
@@ -33,34 +33,34 @@ dependencies = [
 ]
 
 [project.urls]
-Documentation = "https://github.com/Samuel Levy/ai-cop-mcp-demo#readme"
-Issues = "https://github.com/Samuel Levy/ai-cop-mcp-demo/issues"
-Source = "https://github.com/Samuel Levy/ai-cop-mcp-demo"
+Documentation = "https://github.com/Samuel Levy/usdc-arc-mcp-demo#readme"
+Issues = "https://github.com/Samuel Levy/usdc-arc-mcp-demo/issues"
+Source = "https://github.com/Samuel Levy/usdc-arc-mcp-demo"
 
 [project.scripts]
-ai-cop-mcp-demo = "ai_cop_mcp_demo.server:main"
+usdc-arc-mcp-demo = "usdc_arc_mcp_demo.server:main"
 
 [tool.hatch.version]
-path = "src/ai_cop_mcp_demo/__about__.py"
+path = "src/usdc_arc_mcp_demo/__about__.py"
 
 [tool.hatch.envs.types]
 extra-dependencies = [
   "mypy>=1.0.0",
 ]
 [tool.hatch.envs.types.scripts]
-check = "mypy --install-types --non-interactive {args:src/ai_cop_mcp_demo tests}"
+check = "mypy --install-types --non-interactive {args:src/usdc_arc_mcp_demo tests}"
 
 [tool.coverage.run]
-source_pkgs = ["ai_cop_mcp_demo", "tests"]
+source_pkgs = ["usdc_arc_mcp_demo", "tests"]
 branch = true
 parallel = true
 omit = [
-  "src/ai_cop_mcp_demo/__about__.py",
+  "src/usdc_arc_mcp_demo/__about__.py",
 ]
 
 [tool.coverage.paths]
-ai_cop_mcp_demo = ["src/ai_cop_mcp_demo", "*/ai-cop-mcp-demo/src/ai_cop_mcp_demo"]
-tests = ["tests", "*/ai-cop-mcp-demo/tests"]
+usdc_arc_mcp_demo = ["src/usdc_arc_mcp_demo", "*/usdc-arc-mcp-demo/src/usdc_arc_mcp_demo"]
+tests = ["tests", "*/usdc_arc_mcp_demo/tests"]
 
 [tool.coverage.report]
 exclude_lines = [

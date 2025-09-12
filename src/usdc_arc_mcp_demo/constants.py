@@ -2,6 +2,8 @@ from enum import Enum
 
 MCP_TOOL_LIST_LIMIT = 10000
 
+MAX_PAGE_SIZE = 10000
+
 
 class AggregationLevel(str, Enum):
     WEEKLY = "weekly"

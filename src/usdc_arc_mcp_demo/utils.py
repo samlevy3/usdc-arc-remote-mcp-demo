@@ -3,7 +3,7 @@ from datetime import datetime
 from typing import List, Dict, Any, Callable, Optional
 import asyncio
 
-from .constants import AggregationLevel
+from .constants import MAX_PAGE_SIZE, AggregationLevel
 
 
 def aggregate_by_period(
@@ -61,7 +61,6 @@ async def fetch_all_pages(
     params: Dict[str, Any],
     page_param: str = "page",
     page_size_param: str = "limit",
-    max_page_size: int = 10000,
     concurrency: int = 5,
 ) -> List[Any]:
     """
@@ -86,7 +85,7 @@ async def fetch_all_pages(
     async def fetch_page(p):
         page_params = params.copy()
         page_params[page_param] = p
-        page_params[page_size_param] = max_page_size
+        page_params[page_size_param] = MAX_PAGE_SIZE
         resp = await get_func(endpoint, page_params)
         return resp
 
