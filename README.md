@@ -42,7 +42,9 @@ ai-cop-mcp-demo
        "ai-cop-mcp-demo": {
          "command": "/path/to/ai-cop-mcp-demo",
          "args": [],
-         "env": {}
+         "env": {
+            "DAP_API_KEY": "your-api-key"
+         }
        }
      }
    }
