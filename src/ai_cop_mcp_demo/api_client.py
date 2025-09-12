@@ -1,19 +1,16 @@
 import os
 import httpx
-from typing import Any, Dict
+from typing import Any, Dict, Optional
 
-API_BASE = "https://api.regulations.gov/v4"
+API_BASE = "https://api.gsa.gov/analytics/dap/v2"
 
 
-def fetch_documents(params: Dict[str, Any], page: int = 1) -> Dict:
-    local_params = dict(params)
-    local_params["page[number]"] = page
+async def get(endpoint: str, params: Optional[Dict[str, Any]] = None) -> httpx.Response:
+    headers = {"x-api-key": os.getenv("DAP_API_KEY", "DEMO_KEY")}
 
-    # Set api_key as a URL param
-    if "api_key" not in local_params or not local_params["api_key"]:
-        local_params["api_key"] = os.getenv("REGSGOV_API_KEY") or "DEMO_KEY"
+    url = f"{API_BASE}{endpoint}"
 
-    with httpx.Client(timeout=30.0) as client:
-        resp = client.get(f"{API_BASE}/documents", headers={}, params=local_params)
+    async with httpx.AsyncClient(timeout=30.0) as client:
+        resp = await client.get(url, headers=headers, params=params)
         resp.raise_for_status()
         return resp.json()

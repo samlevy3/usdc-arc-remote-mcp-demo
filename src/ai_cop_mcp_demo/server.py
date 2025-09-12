@@ -1,15 +1,21 @@
-import logging
 import fastmcp
-from .tools import documents
 from dotenv import load_dotenv
+
+from .tools import (
+    multiple_reports_tools,
+    single_report_tool,
+    aggregation_tools,
+    agency_tools,
+)
 
 load_dotenv()
 
-logger = logging.getLogger("ai-cop-mcp-demo")
-logger.setLevel(logging.INFO)
-
 mcp = fastmcp.FastMCP("ai-cop-mcp-demo-server")
-documents.register_tools(mcp)
+
+single_report_tool.register_tools(mcp)
+agency_tools.register_tools(mcp)
+multiple_reports_tools.register_tools(mcp)
+aggregation_tools.register_tools(mcp)
 
 
 def main():

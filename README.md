@@ -1,4 +1,6 @@
-# ai-cop-mcp-demo
+# analytics.usa.gov MCP Server
+
+⚠️ **DISCLAIMER: This is a proof of concept and is not intended for production use.**
 
 Demo MCP Server for AI Community Of Practice
 
@@ -47,7 +49,7 @@ Demo MCP Server for AI Community Of Practice
 
 Set your Regulations.gov API key in a `.env` file:
 ```
-REGSGOV_API_KEY=your_api_key_here
+DAP_API_KEY=your_api_key_here
 ```
 
 ## Project Structure
@@ -68,3 +70,9 @@ Or can also do:
 hatch shell 
 ruff check src/
 ```
+
+## Resources
+
+- [Model Context Protocol Documentation](https://modelcontextprotocol.io/docs/getting-started/intro)
+- [FastMCP Documentation](https://gofastmcp.com/getting-started/welcome)
+- [GSA DAP API Documentation](https://open.gsa.gov/api/dap/)
