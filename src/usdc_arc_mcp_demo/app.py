@@ -12,7 +12,7 @@ from .tools import (
 
 load_dotenv()
 
-mcp = fastmcp.FastMCP("ai-cop-mcp-demo-server")
+mcp = fastmcp.FastMCP("ai-cop-mcp-demo-server", stateless_http=True)
 
 @mcp.custom_route("/health", methods=["GET"])
 async def health_check(request):
@@ -25,6 +25,3 @@ aggregation_tools.register_tools(mcp)
 
 
 app = mcp.http_app()
-
-if __name__ == "__main__":
-    uvicorn.run(app, host="0.0.0.0", port=8000)

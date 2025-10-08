@@ -1,5 +1,5 @@
 def register_tools(mcp):
-    @mcp.tool()
+    @mcp.tool("list_agencies")
     async def list_agencies():
         """Get list of all available government agencies with their slugs and metadata"""
         agencies = [

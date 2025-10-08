@@ -8,7 +8,7 @@ from ..models.multiple_reports_models import (
 
 
 def register_tools(mcp):
-    @mcp.tool
+    @mcp.tool("get_government_wide_report")
     async def get_government_wide_report(report_params: ReportParams) -> Any:
         """
         Fetches a government wide report based on the given parameters.
@@ -27,7 +27,7 @@ def register_tools(mcp):
         )
         return await get(path, query_params)
 
-    @mcp.tool
+    @mcp.tool("get_agency_report")
     async def get_agency_report(agency_report_params: AgencyReportParams) -> Any:
         """
         Fetch a report for a specific agency from DAP.
@@ -46,7 +46,7 @@ def register_tools(mcp):
         )
         return await get(path, query_params)
 
-    @mcp.tool
+    @mcp.tool("get_domain_report")
     async def get_domain_report(domain_report_params: DomainReportParams) -> Any:
         """
         Fetch a report for a specific domain from DAP.

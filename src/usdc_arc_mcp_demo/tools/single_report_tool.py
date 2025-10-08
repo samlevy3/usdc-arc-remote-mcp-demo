@@ -3,7 +3,7 @@ from ..api_client import get
 
 
 def register_tools(mcp):
-    @mcp.tool
+    @mcp.tool("get_report")
     async def get_report(
         scope: Literal["reports", "agencies", "domain"],
         report_name: str,

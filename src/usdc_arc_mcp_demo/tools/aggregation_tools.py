@@ -44,7 +44,7 @@ async def fetch_and_aggregate(
 
 
 def register_tools(mcp):
-    @mcp.tool
+    @mcp.tool("get_aggregate_government_wide_report")
     async def get_aggregate_government_wide_report(report_params: ReportParams) -> Any:
         """
         Fetches a government wide report based on the given parameters.
@@ -64,7 +64,7 @@ def register_tools(mcp):
             report_params.report_name,
         )
 
-    @mcp.tool
+    @mcp.tool("get_aggregate_agency_report")
     async def get_aggregate_agency_report(
         agency_report_params: AgencyReportParams,
     ) -> Any:
@@ -86,7 +86,7 @@ def register_tools(mcp):
             agency_report_params.report_name,
         )
 
-    @mcp.tool
+    @mcp.tool("get_aggregate_domain_report")
     async def get_aggregate_domain_report(
         domain_report_params: DomainReportParams,
     ) -> Any:
