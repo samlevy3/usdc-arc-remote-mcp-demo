@@ -7,7 +7,6 @@ API_BASE = "https://api.gsa.gov/analytics/dap/v2"
 
 async def get(endpoint: str, params: Optional[Dict[str, Any]] = None) -> Any:
     headers = {"x-api-key": os.getenv("DAP_API_KEY", "DEMO_KEY")}
-    print(headers)
 
     url = f"{API_BASE}{endpoint}"
 
