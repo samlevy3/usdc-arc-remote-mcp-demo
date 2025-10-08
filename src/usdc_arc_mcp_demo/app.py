@@ -8,6 +8,11 @@ from usdc_arc_mcp_demo.tools import (
     aggregation_tools,
     agency_tools,
 )
+import os, sys
+
+
+print("Environment PYTHONPATH:", os.getenv("PYTHONPATH"))
+print("sys.path:", sys.path)
 
 load_dotenv()
 
