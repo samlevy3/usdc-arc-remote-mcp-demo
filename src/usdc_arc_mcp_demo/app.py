@@ -1,5 +1,7 @@
 import fastmcp
 from dotenv import load_dotenv
+from starlette.responses import JSONResponse
+import uvicorn
 
 from .tools import (
     multiple_reports_tools,
@@ -12,12 +14,9 @@ load_dotenv()
 
 mcp = fastmcp.FastMCP("ai-cop-mcp-demo-server")
 
-
-# Example tool
-@mcp.tool("add", description="Add two numbers")
-def add(a: int, b: int) -> int:
-    return a + b
-
+@mcp.custom_route("/health", methods=["GET"])
+async def health_check(request):
+    return JSONResponse({"status": "healthy", "service": "mcp-server"})
 
 single_report_tool.register_tools(mcp)
 agency_tools.register_tools(mcp)
@@ -25,9 +24,7 @@ multiple_reports_tools.register_tools(mcp)
 aggregation_tools.register_tools(mcp)
 
 
-def main():
-    mcp.run()
-
+app = mcp.http_app(path="/mcp/")
 
 if __name__ == "__main__":
-    main()
+    uvicorn.run(app, host="0.0.0.0", port=8000)
