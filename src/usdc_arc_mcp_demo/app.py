@@ -24,7 +24,7 @@ multiple_reports_tools.register_tools(mcp)
 aggregation_tools.register_tools(mcp)
 
 
-app = mcp.http_app(path="/mcp")
+app = mcp.http_app()
 
 if __name__ == "__main__":
     uvicorn.run(app, host="0.0.0.0", port=8000)
