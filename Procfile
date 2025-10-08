@@ -1,1 +1,1 @@
-web: uvicorn src.usdc_arc_mcp_demo.app:app --host 0.0.0.0 --port $PORT --workers 4 --reload
+web: uvicorn src.usdc_arc_mcp_demo.app:app --host 0.0.0.0 --port $PORT --workers 4
