@@ -3,7 +3,7 @@ from datetime import datetime
 from typing import List, Dict, Any, Callable, Optional
 import asyncio
 
-from .constants import MAX_PAGE_SIZE, AggregationLevel
+from usdc_arc_mcp_demo.constants import MAX_PAGE_SIZE, AggregationLevel
 
 
 def aggregate_by_period(

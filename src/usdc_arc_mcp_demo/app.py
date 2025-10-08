@@ -1,9 +1,8 @@
 import fastmcp
 from dotenv import load_dotenv
 from starlette.responses import JSONResponse
-import uvicorn
 
-from .tools import (
+from usdc_arc_mcp_demo.tools import (
     multiple_reports_tools,
     single_report_tool,
     aggregation_tools,

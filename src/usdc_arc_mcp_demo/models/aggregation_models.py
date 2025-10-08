@@ -1,7 +1,7 @@
 from typing import Optional
 from pydantic import BaseModel, Field, field_validator
 
-from ..constants import AggregationLevel
+from usdc_arc_mcp_demo.constants import AggregationLevel
 
 
 class QueryParams(BaseModel):

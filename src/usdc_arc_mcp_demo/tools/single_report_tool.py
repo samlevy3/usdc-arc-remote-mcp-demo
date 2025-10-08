@@ -1,5 +1,5 @@
 from typing import Any, Literal, Optional
-from ..api_client import get
+from usdc_arc_mcp_demo.api_client import get
 
 
 def register_tools(mcp):

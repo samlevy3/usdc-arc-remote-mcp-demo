@@ -1,6 +1,6 @@
 from typing import Any
-from ..api_client import get
-from ..models.multiple_reports_models import (
+from usdc_arc_mcp_demo.api_client import get
+from usdc_arc_mcp_demo.models.multiple_reports_models import (
     ReportParams,
     AgencyReportParams,
     DomainReportParams,
