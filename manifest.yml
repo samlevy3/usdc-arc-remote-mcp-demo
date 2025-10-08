@@ -7,7 +7,6 @@ applications:
     health-check-http-endpoint: /mcp/health
     env:
       PYTHONUNBUFFERED: 1
-      PORT: 8000
     random-route: true
     disk_quota: 512M
     memory: 256M
